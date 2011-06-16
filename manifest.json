@@ -1,6 +1,6 @@
 ﻿{
 	"name": "Office De Cossori",
-	"version": "1.1.1",
+	"version": "1.2.1",
 	"icons": {
 		"32": "icon32.png",
 		"48": "icon48.png",
@@ -8,18 +8,42 @@
 	},
 	"description": "2chまとめブログの気まずい広告を非表示状態にします",
 	"permissions": [
+		"http://hamusoku.com/*",
+		"http://blog.livedoor.jp/himasoku123/*",
+		"http://blog.livedoor.jp/news23vip/*",
+		"http://news4vip.livedoor.biz/*",
 		"http://alfalfalfa.com/*",
 		"http://blog.livedoor.jp/dqnplus/*"
 	],
 	"content_scripts":[
 		{
+			"matches": ["http://hamusoku.com/*"],
+			"js": ["js/jquery-1.5.2.min.js","js/hamusoku/hide_ad.js"],
+			"run_at": "document_start"
+		},
+		{
+			"matches": ["http://blog.livedoor.jp/himasoku123/*"],
+			"js": ["js/jquery-1.5.2.min.js","js/himasoku/hide_ad.js"],
+			"run_at": "document_start"
+		},
+		{
+			"matches": ["http://blog.livedoor.jp/news23vip/*"],
+			"js": ["js/jquery-1.5.2.min.js","js/vipper_na_ore/hide_ad.js"],
+			"run_at": "document_start"
+		},
+		{
+			"matches": ["http://news4vip.livedoor.biz/*"],
+			"js": ["js/jquery-1.5.2.min.js","js/nyu-soku/hide_ad.js"],
+			"run_at": "document_start"
+		},
+		{
 			"matches": ["http://alfalfalfa.com/*"],
-			"js": ["js/jquery-1.5.2.min.js","js/alfalfa/hideAd.js"],
+			"js": ["js/jquery-1.5.2.min.js","js/alfalfa/hide_ad.js"],
 			"run_at": "document_start"
 		},
 		{
 			"matches": ["http://blog.livedoor.jp/dqnplus/*"],
-			"js": ["js/jquery-1.5.2.min.js","js/itanyu/hideAd.js"],
+			"js": ["js/jquery-1.5.2.min.js","js/itanyu/hide_ad.js"],
 			"run_at": "document_start"
 		}
 	],
