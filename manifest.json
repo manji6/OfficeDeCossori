@@ -1,0 +1,27 @@
+﻿{
+	"name": "Office De Cossori",
+	"version": "1.1.1",
+	"icons": {
+		"32": "icon32.png",
+		"48": "icon48.png",
+		"128": "icon128.png"
+	},
+	"description": "2chまとめブログの気まずい広告を非表示状態にします",
+	"permissions": [
+		"http://alfalfalfa.com/*",
+		"http://blog.livedoor.jp/dqnplus/*"
+	],
+	"content_scripts":[
+		{
+			"matches": ["http://alfalfalfa.com/*"],
+			"js": ["js/jquery-1.5.2.min.js","js/alfalfa/hideAd.js"],
+			"run_at": "document_start"
+		},
+		{
+			"matches": ["http://blog.livedoor.jp/dqnplus/*"],
+			"js": ["js/jquery-1.5.2.min.js","js/itanyu/hideAd.js"],
+			"run_at": "document_start"
+		}
+	],
+	"background_page": "background.html"
+}
