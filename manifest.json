@@ -1,6 +1,6 @@
 ﻿{
 	"name": "Office De Cossori",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"icons": {
 		"32": "icon32.png",
 		"48": "icon48.png",
@@ -13,7 +13,8 @@
 		"http://blog.livedoor.jp/news23vip/*",
 		"http://news4vip.livedoor.biz/*",
 		"http://alfalfalfa.com/*",
-		"http://blog.livedoor.jp/dqnplus/*"
+		"http://blog.livedoor.jp/dqnplus/*",
+		"http://jin115.com/*"
 	],
 	"content_scripts":[
 		{
@@ -44,6 +45,11 @@
 		{
 			"matches": ["http://blog.livedoor.jp/dqnplus/*"],
 			"js": ["js/jquery-1.5.2.min.js","js/itanyu/hide_ad.js"],
+			"run_at": "document_start"
+		},
+		{
+			"matches": ["http://jin115.com/*"],
+			"js": ["js/jquery-1.5.2.min.js","js/orege_jin/hide_ad.js"],
 			"run_at": "document_start"
 		}
 	],
